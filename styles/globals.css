@@ -152,6 +152,7 @@ nav ul li:hover{
 @media (max-width: 800px){
     #logo{
         height: 1.2rem;
+        max-width: 100%;
     }
 
     .menu-button{
