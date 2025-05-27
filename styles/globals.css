@@ -151,7 +151,7 @@ nav ul li:hover{
 /* Media Queries */
 @media (max-width: 800px){
     #logo{
-        height: 1.2rem;
+        height: 2rem;
         max-width: 100%;
     }
 
