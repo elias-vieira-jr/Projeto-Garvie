@@ -1,51 +1,48 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Garviè | Loja oficial</title>
-    <link rel="shortcut icon" href="images/logo/favicon (1).ico" type="image/x-icon">
-    <link rel="stylesheet" href="styles/globals.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="shortcut icon" href="images/logo/favicon/favicon-v1.ico" type="image/x-icon">
+  <title>Garviè | Site Oficial</title>
+  <link rel="stylesheet" href="styles/globals.css">
 </head>
 <body>
+  <header>
     <div class="navbar">
-        <div class="header-inner-content">
-            <img src="images/logo/logo-garvie-v2.png" alt="logo" id="logo">
-            <nav>
-                <ul>
-                    <li>Home</li>
-                    <li>Produtos</li>
-                    <li>Sobre a Garviè</li>
-                    <li>Contato</li>
-                </ul>
-            </nav>
-            <div class="nav-icon-container">
-                <img src="images/cart.png" alt="sacola">
-                <img src="images/menu.png" alt="menu" class="menu-button">
-            </div>
-        </div>
+      <div class="navbar-logo">
+        <img src="images/logo/logo-garvie.png" alt="logo">
+      </div>
+      <nav>
+        <ul>
+          <li>Home</li>
+          <li>Produtos</li>
+          <li>Sobre a Garviè</li>
+          <li>Contato</li>
+        </ul>
+      </nav>
+      <div class="navbar-cart">
+        <img src="https://github.com/elias-vieira-jr/Projeto-Garvie/blob/main/images/cart.png?raw=true" alt="sacola">
+      </div>
+      <div id="burguer" class="navbar-menu" onclick="clickmenu()">
+        <div class="bar"></div>
+        <div class="bar"></div>
+        <div class="bar"></div>
+      </div>
+
     </div>
+  </header>
+  <main></main>
+  <script>
+    function clickmenu(){
+        if (burguer.style.display == 'block'){
+            burguer.style.display = 'none'
+        } else {
+            burguer.style.display = 'block'
+        }
+    }
 
-    <header>
-        <div class="header-inner-content"></div>
-        <div class="header-button-side">
-            <div class="header-button-side-left">
-                <h2>Um novo estilo</h2>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Itaque obcaecati eum sequi id ex exercitationem ab fugiat et, tempore temporibus non, asperiores aut corrupti fugit! Est recusandae in suscipit dignissimos!</p>
-                <button>Ver agora</button>
-            </div>
-            <div class="header-button-side-right">
-                <img src="images/nike-dunk.jpg" alt="tenis">
-            </div>
-        </div>
-    </header>
-
-    <script>
-        const navbar = document.querySelector(".navbar");
-        const menubutton = document.querySelector(".menu-button");
-
-        menubutton.addEventListener("click", () =>{
-            navbar.classList.toggle("show-menu");
-        });
-    </script>
+  </script>
+  <footer></footer>
 </body>
+</html>
