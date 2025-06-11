@@ -31,12 +31,64 @@
       </div>
     </div>
   </header>
-  <main></main>
+  <main>
+    <section class="carousel-container">
+      <div class="carousel-slide" id="carousel">
+        <img src="images/banners/banner-v1.png" alt="Banner 1">
+        <img src="images/banners/banner-v2.png" alt="Banner 2">
+        <img src="images/banners/banner-v3.png" alt="Banner 3">
+      </div>
+
+      <div class="carousel-dots">
+        <span class="dot active" onclick="currentSlide(1)"></span>
+        <span class="dot" onclick="currentSlide(2)"></span>
+        <span class="dot" onclick="currentSlide(3)"></span>
+      </div>
+    </section>
+  </main>
   <script>
+    // --- MENU ---
     function clickmenu(){
       const menu = document.getElementById('menu')
       menu.classList.toggle('active');
     }
+
+    // --- CAROUSEL ---
+    let slideIndex = 0
+    const slides = document.getElementById("carousel").children;
+    const dots = document.querySelector(".carousel-dots").children;
+    const totalSlides = slides.length;
+
+    function showSlides(){
+      for (let i = 0; i < dots.length; i++){
+        dots[i].classList.remove('active');
+      }
+      slideIndex++;
+      if (slideIndex >= totalSlides){
+        slideIndex = 0;
+      }0
+
+      document.getElementById("carousel").style.transform = `translateX(${-slideIndex * 100}%)`;
+
+      dots[slideIndex].classList.add('active');
+
+      setTimeout(showSlides, 5000);
+    }
+
+    function currentSlide(n){
+      slideIndex = n-1;
+      document.getElementById("carousel").style.transform = `translateX(${-slideIndex * 100}%)`;
+
+      for (let i = 0; i < dots.length; i++){
+        dots[i].classList.remove('active');
+      }
+      dots[slideIndex].classList.add('active');
+
+      clearTimeout(autoSlideTimeout);
+      autoSlideTimeout = setTimeout(showSlides, 5000);
+    }
+
+    let autoSlideTimeout = setTimeout(showSlides, 5000);
   </script>
   <footer></footer>
 </body>
