@@ -58,7 +58,7 @@ nav ul li:hover{
 }
 
 .navbar-cart img{
-    height: 30px;
+    height: 28px;
     cursor: pointer;
 }
 
@@ -82,12 +82,27 @@ nav ul li:hover{
 }
 
 @media (max-width: 800px){
+    .navbar{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 5px 15px;
+        gap: 10px;
+    }
+
     .navbar-logo img{
+        display: flex;
         height: 50px;
+        margin-left: auto;
     }
 
     nav{
         display: none;
+    }
+
+    .navbar-cart{
+        margin-left: 5px;
+        margin-left: auto;
     }
 
     .navbar-menu{
