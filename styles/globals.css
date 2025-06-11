@@ -36,6 +36,8 @@
 
 nav{
     flex-grow: 1;
+    display: flex;
+    justify-content: center;
 }
 
 nav ul{
@@ -88,16 +90,43 @@ nav ul li:hover{
         align-items: center;
         padding: 5px 15px;
         gap: 10px;
+        flex-wrap: wrap;
     }
 
     .navbar-logo img{
         display: flex;
         height: 50px;
-        margin-left: auto;
     }
 
     nav{
         display: none;
+        width: 100%;
+        flex-direction: column;
+        background-color: var(--cor1);
+        position: absolute;
+        top: 60px;
+        left: 0;
+        z-index: 999;
+    }
+
+    nav.active{
+        display: flex;
+    }
+
+    nav ul{
+        flex-direction: column;
+        padding: 20px 0;
+        gap: 20px;
+    }
+
+    nav ul li{
+        text-align: center;
+        width: 100%;
+        padding: 10px 0;
+    }
+
+    nav ul li:last-child{
+        border-bottom: none;
     }
 
     .navbar-cart{

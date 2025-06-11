@@ -13,7 +13,7 @@
       <div class="navbar-logo">
         <img src="images/logo/logo-garvie.png" alt="logo">
       </div>
-      <nav>
+      <nav id="menu">
         <ul>
           <li>Home</li>
           <li>Produtos</li>
@@ -34,13 +34,9 @@
   <main></main>
   <script>
     function clickmenu(){
-        if (burguer.style.display == 'block'){
-            burguer.style.display = 'none'
-        } else {
-            burguer.style.display = 'block'
-        }
+      const menu = document.getElementById('menu')
+      menu.classList.toggle('active');
     }
-
   </script>
   <footer></footer>
 </body>
