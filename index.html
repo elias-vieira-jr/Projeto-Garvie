@@ -76,6 +76,8 @@
     }
 
     function currentSlide(n){
+      clearTimeout(autoSlideTimeout);
+
       slideIndex = n-1;
       document.getElementById("carousel").style.transform = `translateX(${-slideIndex * 100}%)`;
 
