@@ -46,7 +46,7 @@
       </div>
     </section>
   </main>
-  <script>
+<script>
     // --- MENU ---
     function clickmenu(){
       const menu = document.getElementById('menu')
@@ -54,31 +54,38 @@
     }
 
     // --- CAROUSEL ---
-    let slideIndex = 0
+    let slideIndex = 0;
     const slides = document.getElementById("carousel").children;
     const dots = document.querySelector(".carousel-dots").children;
     const totalSlides = slides.length;
+    let autoSlideTimeout;
 
     function showSlides(){
+
+      clearTimeout(autoSlideTimeout);
+
       for (let i = 0; i < dots.length; i++){
         dots[i].classList.remove('active');
       }
+
       slideIndex++;
       if (slideIndex >= totalSlides){
         slideIndex = 0;
-      }0
+      }
 
       document.getElementById("carousel").style.transform = `translateX(${-slideIndex * 100}%)`;
 
       dots[slideIndex].classList.add('active');
 
-      setTimeout(showSlides, 5000);
+      autoSlideTimeout = setTimeout(showSlides, 5000);
     }
 
     function currentSlide(n){
+
       clearTimeout(autoSlideTimeout);
 
-      slideIndex = n-1;
+      slideIndex = n - 1;
+
       document.getElementById("carousel").style.transform = `translateX(${-slideIndex * 100}%)`;
 
       for (let i = 0; i < dots.length; i++){
@@ -86,12 +93,11 @@
       }
       dots[slideIndex].classList.add('active');
 
-      clearTimeout(autoSlideTimeout);
       autoSlideTimeout = setTimeout(showSlides, 5000);
     }
 
-    let autoSlideTimeout = setTimeout(showSlides, 5000);
-  </script>
+    showSlides();
+</script>
   <footer></footer>
 </body>
 </html>
